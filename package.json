@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.12.7",
     "uuidv4": "^6.2.7"
   },
   "devDependencies": {

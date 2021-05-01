@@ -1,10 +1,10 @@
 import { request, response, Router } from "express";
+import { registerUserController } from "./useCases/RegisterUser";
 
 const router = Router();
 
-router.post('/register', (request, response) =>{
-
-    return response.status(201).send({'message': 'sucess'});
+router.post('/register', async (request, response) => {
+    return await registerUserController.handler(request, response);
 })
 
-export { router}
+export { router }

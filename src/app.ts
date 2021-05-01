@@ -1,10 +1,13 @@
 import express from 'express'
+import { MongoConfig } from './config/MongoConfig';
 import { router } from './routes';
 
 const app = express();
 
-app.use(express.json())
+let mongo = new MongoConfig;
+mongo.connect();
 
+app.use(express.json())
 app.use(router);
 
 export { app }
