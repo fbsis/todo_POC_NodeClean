@@ -9,7 +9,7 @@ export class ViewProjectUseCase {
 
     }
 
-    async execute(data: IViewProjectRequestDTO) : Promise<Projects> {
+    async execute(data: IViewProjectRequestDTO) : Promise<Projects[]> {
         const project = await this.projectRepository.viewAll(data.owner);
 
         return project;
