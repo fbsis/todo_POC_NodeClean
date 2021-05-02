@@ -7,7 +7,7 @@ enum Status {
 
 export class Tasks {
     
-    public readonly id: string;
+    public readonly id?: string;
 
     public name: string;
     public status: Status;

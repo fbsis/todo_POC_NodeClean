@@ -4,6 +4,7 @@ import { editProjectController } from "./useCases/EditProject/";
 import { loginUserController } from "./useCases/LoginUser";
 import { removeProjectController } from "./useCases/ProjectRemove";
 import { registerUserController } from "./useCases/RegisterUser";
+import { taskProjectController } from "./useCases/TaskProject";
 import { viewProjectController } from "./useCases/ViewProject";
 
 const router = Router();
@@ -30,6 +31,18 @@ router.patch('/project/:id', async (request: Request, response: Response) => {
 
 router.delete('/project/:id', async (request: Request, response: Response) => {
     return await removeProjectController.handler(request, response);
+})
+
+router.post('/project/task/:id', async (request: Request, response: Response) => {
+    return await taskProjectController.Create(request, response);
+})
+
+router.patch('/project/task/:id', async (request: Request, response: Response) => {
+    return await taskProjectController.edit(request, response);
+})
+
+router.delete('/project/task/:id', async (request: Request, response: Response) => {
+    return await taskProjectController.remove(request, response);
 })
 
 export { router }

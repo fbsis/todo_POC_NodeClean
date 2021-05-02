@@ -1,4 +1,5 @@
 import { Projects } from "../../entities/Projects";
+import { Tasks } from "../../entities/Tasks";
 export interface IProjectsRepository {
 
   viewAll(owner?: string): Promise<Projects[]>;
@@ -7,8 +8,8 @@ export interface IProjectsRepository {
   save(projects: Projects): Promise<void>;
   remove(projects: Projects): Promise<void>;
 
-  addTask(projects: Projects): Promise<void>;
-  editTasks(projects: Projects): Promise<void>;
-  removeTasks(projects: Projects): Promise<void>;
+  addTask(project: Projects, tasks: Tasks): Promise<void>;
+  editTasks(project: Projects, tasks: Tasks): Promise<void>;
+  removeTasks(project: Projects, tasks: Tasks): Promise<void>;
   
 }

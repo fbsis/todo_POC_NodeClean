@@ -2,14 +2,14 @@ import { MongoProjectsRepository } from "../../repositories/Projects/Implementat
 import { CreateProjectController } from "./CreateProjectController";
 import { CreateProjectUseCase } from "./CreateProjectUseCase"
 
-const mongoUsersRepository = new MongoProjectsRepository();
+const mongoProjectRepository = new MongoProjectsRepository();
 
 const createProjectUseCase = new CreateProjectUseCase(
-    mongoUsersRepository
-  )
-  
-  const createProjectController = new CreateProjectController(
-    createProjectUseCase
-  )
+  mongoProjectRepository
+)
 
-  export { createProjectUseCase, createProjectController }
+const createProjectController = new CreateProjectController(
+  createProjectUseCase
+)
+
+export { createProjectUseCase, createProjectController }

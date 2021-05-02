@@ -12,14 +12,15 @@ interface ProjectsDoc extends Document {
   id: string,
   name: string;
   owner: string;
-  tasks: TasksDoc
+  tasks: TasksDoc[]
 }
 
 const tasks = new Schema({
   id: { type: Schema.Types.ObjectId, required: true },
   description: { type: String, required: true, trim: true },
+  status: { type: String, required: true, trim: true },
   creatingDate: { type: Date, required: true, default: Date.now() },
-  completeDate: { type: Date, required: true, default: Date.now() },
+  completeDate: { type: Date, required: false},
 });
 
 const ProjectsSchema = new Schema(
