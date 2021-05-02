@@ -10,7 +10,8 @@ export class CreateProjectController {
     }
     async handler(request: Request, response: Response): Promise<Response> {
 
-        const { name, owner } = request.body;
+        const { name } = request.body;
+        const owner = "608dd0ea59943047a9016e1d";
 
         try {
             await this.createProjectUseCase.execute({name, owner});

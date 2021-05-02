@@ -5,6 +5,11 @@ import MongoProjectsSchema from "./MongoProjectsSchema";
 
 
 export class MongoProjectsRepository implements IProjectsRepository {
+
+    async viewAll(owner: string): Promise<Projects[]> {
+        return await MongoProjectsSchema.find({owner});
+    }
+
     async findById(id: string): Promise<Projects> {
         return await MongoProjectsSchema.findById(id);
     }

@@ -11,7 +11,7 @@ export class CreateProjectUseCase {
 
     async execute(data: ICreateProjectRequestDTO) {
         const user = new Projects(data);
-
+        
         await this.projectRepository.save(user);
     }
 
