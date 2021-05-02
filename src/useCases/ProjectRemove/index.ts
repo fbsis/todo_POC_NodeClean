@@ -4,12 +4,12 @@ import { RemoveProjectUseCase } from "./RemoveProjectsUseCase"
 
 const mongoProjectsRepository = new MongoProjectsRepository();
 
-const registerUserUseCase = new RemoveProjectUseCase(
+const removeProjectUseCase = new RemoveProjectUseCase(
   mongoProjectsRepository
 )
 
-const registerUserController = new RemoveProjectController(
-  registerUserUseCase
+const removeProjectController = new RemoveProjectController(
+  removeProjectUseCase
 )
 
-export { registerUserUseCase, registerUserController }
+export { removeProjectUseCase, removeProjectController }

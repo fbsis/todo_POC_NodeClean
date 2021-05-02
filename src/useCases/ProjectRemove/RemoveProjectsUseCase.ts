@@ -1,4 +1,3 @@
-import { User } from "../../entities/User";
 import { IProjectsRepository } from "../../repositories/Projects/IProjectsRepository";
 import { IRemoveProjectRequestDTO } from "./RemoveProjectsDTO";
 

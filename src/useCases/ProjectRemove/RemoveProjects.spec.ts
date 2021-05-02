@@ -1,4 +1,3 @@
-import { User } from "../../entities/User";
 import { RemoveProjectUseCase } from "./RemoveProjectsUseCase";
 import { MongoProjectsRepository } from "../../repositories/Projects/Implementations/MongoProjectsRepository";
 import { Projects } from "../../entities/Projects";
