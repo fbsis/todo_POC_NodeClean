@@ -9,16 +9,16 @@ export class MongoProjectsRepository implements IProjectsRepository {
         return await MongoProjectsSchema.findById(id);
     }
 
-    async save(user: Projects): Promise<void> {
-        await MongoProjectsSchema.create(user);
+    async save(project: Projects): Promise<void> {
+        await MongoProjectsSchema.create(project);
     }
 
     async view(id: string): Promise<Projects> {
         throw new Error("Method not implemented.");
     }
 
-    async remove(user: Projects): Promise<void> {
-        throw new Error("Method not implemented.");
+    async remove(project: Projects): Promise<void> {
+        await MongoProjectsSchema.remove(project);
     }
 
     async addTask(projects: Projects): Promise<void> {
