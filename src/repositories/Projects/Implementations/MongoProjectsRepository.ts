@@ -18,7 +18,7 @@ export class MongoProjectsRepository implements IProjectsRepository {
     }
 
     async remove(project: Projects): Promise<void> {
-        await MongoProjectsSchema.remove(project);
+        await MongoProjectsSchema.deleteOne(project);
     }
 
     async addTask(projects: Projects): Promise<void> {
