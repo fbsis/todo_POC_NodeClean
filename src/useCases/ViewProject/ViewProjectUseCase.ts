@@ -12,7 +12,7 @@ export class ViewProjectUseCase {
     async execute(data: IViewProjectRequestDTO): Promise<Projects[]> {
         const project = await this.projectRepository.viewAll(data.owner);
 
-        if (project.find(e => e.owner !== data.owner)) {
+        if (project.find(e => e.owner.toString() !== data.owner)) {
             throw new Error("This user can not access this register");
         }
         
